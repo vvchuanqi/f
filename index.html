@@ -3,17 +3,151 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
   <title>首页</title>
+  <link rel="stylesheet" href="css/swiper.min.css">
   <style media="screen">
     * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    .header img,
+    .body img {
+      display: block;
+      width: 100%;
+      max-width: 750px;
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: auto;
+    }
+
+    .swiper-wrapper>.swiper-slide>img {
+      display: block;
+      width: 100%;
+      max-width: 750px;
+    }
+
+    .thumb-list {
+      overflow: hidden;
+    }
+
+    .thumb-list ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .thumb-list ul li {
+      float: left;
+      width: 33.33333333%;
+    }
+
+    .thumb-list ul li img {
+      display: block;
+      width: 100%;
+      border: 4px solid #FFF;
+      transition: border 0.1s;
+    }
+
+    .thumb-list ul li.active img {
+      border: 4px solid #e91a70;
+    }
+
+    @media(min-width:750px) {
+
+      .header,
+      .body,
+      .swiper-container,
+      .thumb-list {
+        width: 750px;
+        margin: 0 auto;
+      }
+
     }
   </style>
 </head>
 
 <body>
+  <!-- start 轮播图片部分 -->
+  <div class="header">
+    <img src="images/imgs/pr_01.png" alt=""></div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/1zz.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/2zz.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images/3zz.jpg" alt=""></div>
+    </div>
+    <!-- 分页器 -->
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="thumb-list">
+    <ul id="thumbs">
+      <li class="active"><img src="images/1zz.jpg" alt=""></li>
+      <li><img src="images/2zz.jpg" alt=""></li>
+      <li><img src="images/3zz.jpg" alt=""></li>
+    </ul>
+  </div>
+  <!-- end 轮播图片部分 -->
+  <!-- start 切片组 -->
+  <div class="body">
+    <img src="images/imgs/pr_02.png" alt="">
+    <img src="images/imgs/pr_03.png" alt="">
+    <img src="images/imgs/pr_04.png" alt="">
+    <img src="images/imgs/pr_05.png" alt="">
+    <img src="images/imgs/pr_06.png" alt="">
+    <img src="images/imgs/pr_07.png" alt="">
+    <img src="images/imgs/pr_08.png" alt="">
+    <img src="images/imgs/pr_09.png" alt="">
+    <img src="images/imgs/pr_10.png" alt="">
+    <img src="images/imgs/pr_11.png" alt="">
+    <img src="images/imgs/pr_12.png" alt="">
+    <img src="images/imgs/pr_13.png" alt="">
+    <img src="images/imgs/pr_14.png" alt="">
+    <img src="images/imgs/pr_15.png" alt="">
+    <img src="images/imgs/pr_16.png" alt="">
+    <img src="images/imgs/pr_17.png" alt="">
+    <img src="images/imgs/pr_18.png" alt="">
+    <img src="images/imgs/pr_19.png" alt="">
+    <img src="images/imgs/pr_20.png" alt="">
+    <img src="images/imgs/pr_21.png" alt="">
+    <img src="images/imgs/pr_22.jpg" alt="">
+  </div>
+  <!-- end 切片组 -->
+  <script src="js/zepto.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script>
+    $(function() {
+      var mySwiper = new Swiper('.swiper-container', {
+        // 如果需要分页器
+        pagination: {
+          el: '.swiper-pagination',
+        },
 
+        // 如果需要前进后退按钮
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        on: {
+          slideChangeTransitionEnd: function() {
+            var index = this.activeIndex;
+            //alert(this.activeIndex); //切换结束时，告诉我现在是第几个slide
+            $(".thumb-list > ul >li").eq(index).addClass("active").siblings("li").removeClass("active");
+          },
+        },
+      });
+      //点击小图显示大图
+      $('#thumbs > li').click(function() {
+        var index = $(this).index();
+        mySwiper.slideTo(index, 300, false); //切换到第1个slide，速度为300毫秒
+        $(this).addClass("active").siblings("li").removeClass("active");
+      });
+    });
+  </script>
 </body>
 
 </html>
