@@ -13,6 +13,11 @@
       box-sizing: border-box;
     }
 
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
     body {
       padding-bottom: 60px;
     }
@@ -29,7 +34,7 @@
       height: auto;
     }
 
-    .swiper-wrapper>.swiper-slide>img {
+    .swiper-wrapper>.swiper-slide img {
       display: block;
       width: 100%;
       max-width: 750px;
@@ -74,27 +79,39 @@
 
     .footer>.foot-link {
       height: 58px;
-      padding: 0 25px;
+      padding: 16px 15px 0 15px;
       text-align: center;
       color: #FFF;
       text-decoration: none;
-      font-size: 12px;
-      padding-top: 8px;
+      font-size: 16px;
+      vertical-align: middle;
     }
 
     .footer>.foot-link>img {
-      width: 24px;
-      height: 20px;
-      display: block;
-      margin: 0 auto 5px;
+      width: 32px;
+      height: 26px;
+      display: inline-block;
+      margin-right: 12px;
+      vertical-align: middle;
     }
 
     .footer>.link-home {
+      padding-left: 45px;
+      padding-right: 45px;
       background-color: #FF9800;
+      background: -webkit-linear-gradient(left, #cfab5e, #e7ce8b);
+      /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(left, #cfab5e, #e7ce8b);
+      /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(left, #cfab5e, #e7ce8b);
+      /* Firefox 3.6 - 15 */
+      background: linear-gradient(left, #cfab5e, #e7ce8b);
+      /* 标准的语法（必须放在最后） */
     }
 
     .footer>.link-baidu {
-      background-color: #03A9F4;
+      background-color: #ad1c79;
+      flex: 1;
     }
 
     @media(min-width:750px) {
@@ -117,9 +134,9 @@
     <img src="images/imgs/pr_01.png" alt=""></div>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="images/3zz.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="images/1zz.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="images/2zz.jpg" alt=""></div>
+      <div class="swiper-slide"><a href="detail1.html"><img src="images/3zz.jpg" alt=""></a></div>
+      <div class="swiper-slide"><a href="detail1.html"><img src="images/1zz.jpg" alt=""></a></div>
+      <div class="swiper-slide"><a href="detail2.html"><img src="images/2zz.jpg" alt=""></a></div>
     </div>
     <!-- 分页器 -->
     <div class="swiper-pagination"></div>
@@ -134,58 +151,82 @@
   <!-- end 轮播图片部分 -->
   <!-- start 切片组 -->
   <div class="body">
-    <img src="images/imgs/pr_03.png" alt="">
+    <a href="detail1.html"><img src="images/imgs/pr_03.png" alt=""></a>
     <a href="detail1.html"><img src="images/imgs/pr_04.png" alt=""></a>
-    <img src="images/imgs/pr_05.png" alt="" usemap="#Map">
-    <map name="Map">
-      <area shape="rect" coords="9,132,545,308" href="detail1.html">
-      <area shape="rect" coords="558,131,744,308" href="detail2.html">
-    </map>
-    <img src="images/imgs/pr_06.png" alt="">
-    <img src="images/imgs/pr_07.png" alt="" usemap="#Map2">
-    <map name="Map2">
-      <area shape="rect" coords="16,84,593,323" href="detail1.html">
-      <area shape="rect" coords="604,84,740,323" href="detail2.html">
-    </map>
-    <img src="images/imgs/pr_08.png" alt="" usemap="#Map3">
-    <map name="Map3">
-      <area shape="rect" coords="258,342,505,400" href="detail1.html">
-    </map>
-    <img src="images/imgs/pr_09.png" alt="" usemap="#Map4">
-    <map name="Map4">
-      <area shape="rect" coords="260,283,495,346" href="detail1.html">
-    </map>
-    <img src="images/imgs/pr_10.png" alt="" usemap="#Map5">
-    <map name="Map5">
-      <area shape="rect" coords="264,283,490,349" href="detail1.html">
-    </map>
-    <img src="images/imgs/pr_11.png" alt="" usemap="#Map6">
-    <map name="Map6">
-      <area shape="rect" coords="269,310,488,373" href="detail1.html">
-    </map>
-    <img src="images/imgs/pr_12.png" alt="">
-    <img src="images/imgs/pr_13.png" alt="">
-    <img src="images/imgs/pr_14.png" alt="">
-    <img src="images/imgs/pr_15.png" alt="">
-    <img src="images/imgs/pr_16.png" alt="" usemap="#Map7">
-    <map name="Map7">
-      <area shape="rect" coords="33,217,342,551" href="detail1.html">
-      <area shape="rect" coords="400,212,718,540" href="detail1.html">
-      <area shape="rect" coords="32,599,340,903" href="detail1.html">
-      <area shape="rect" coords="401,601,720,903" href="detail2.html">
-    </map>
+    <table>
+      <tr>
+        <td colspan="3"><a href="detail1.html"><img src="images/imgs/pr_04_01.png" alt=""></a></td>
+      </tr>
+      <tr>
+        <td><a href="detail1.html"><img src="images/imgs/pr_04_02.png" alt=""></a></td>
+        <td><a href="detail1.html"><img src="images/imgs/pr_04_03.png" alt=""></a></td>
+        <td><a href="detail1.html"><img src="images/imgs/pr_04_04.png" alt=""></a></td>
+      </tr>
+      <tr>
+        <td><a href="detail1.html"><img src="images/imgs/pr_04_05.png" alt=""></a></td>
+        <td><a href="detail1.html"><img src="images/imgs/pr_04_06.png" alt=""></a></td>
+        <td><a href="detail2.html"><img src="images/imgs/pr_04_07.png" alt=""></a></td>
+      </tr>
+      <tr>
+        <td><a href="detail1.html"><img src="images/imgs/pr_04_08.png" alt=""></a></td>
+        <td><a href="detail2.html"><img src="images/imgs/pr_04_09.png" alt=""></a></td>
+        <td><a href="detail1.html"><img src="images/imgs/pr_04_10.png" alt=""></a></td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td><a href="detail1.html"><img src="images/imgs/pr_05_01.jpg" alt=""></a></td>
+        <td><a href="detail2.html"><img src="images/imgs/pr_05_02.jpg" alt=""></a></td>
+      </tr>
+    </table>
+    <a href="detail1.html"><img src="images/imgs/pr_06.png" alt=""></a>
+    <table>
+      <tr>
+        <td><a href="detail1.html"><img src="images/imgs/pr_07_01.png" alt=""></a></td>
+        <td><a href="detail2.html"><img src="images/imgs/pr_07_02.png" alt=""></a></td>
+      </tr>
+    </table>
+    <a href="detail1.html"><img src="images/imgs/pr_08.png" alt=""></a>
+    <a href="detail1.html"><img src="images/imgs/pr_09.png" alt=""></a>
+    <a href="detail1.html"><img src="images/imgs/pr_10.png" alt=""></a>
+    <table>
+      <tr>
+        <td><a href="detail1.html"><img src="images/imgs/pr_11_01.png" alt=""></a></td>
+      </tr>
+      <tr>
+        <td><a href="detail2.html"><img src="images/imgs/pr_11_02.png" alt=""></a></td>
+      </tr>
+    </table>
+    <a href="detail1.html"><img src="images/imgs/pr_12.png" alt="">
+      <img src="images/imgs/pr_13.png" alt="">
+      <img src="images/imgs/pr_14.png" alt="">
+      <img src="images/imgs/pr_15.png" alt=""></a>
+
+    <table>
+      <tr>
+        <td><a href="detail1.html"><img src="images/imgs/pr_16_01.png" alt=""></a></td>
+        <td><a href="detail1.html"><img src="images/imgs/pr_16_02.png" alt=""></a></td>
+      </tr>
+      <tr>
+        <td><a href="detail1.html"><img src="images/imgs/pr_16_03.png" alt=""></a></td>
+        <td><a href="detail2.html"><img src="images/imgs/pr_16_04.png" alt=""></a></td>
+      </tr>
+    </table>
     <img src="images/imgs/pr_17.png" alt="">
-    <img src="images/imgs/pr_18.png" alt="" usemap="#Map8">
-    <map name="Map8">
-      <area shape="rect" coords="27,204,361,520" href="detail1.html">
-      <area shape="rect" coords="385,195,707,521" href="detail1.html">
-      <area shape="rect" coords="27,527,365,839" href="detail1.html">
-      <area shape="rect" coords="389,529,710,850" href="detail2.html">
-    </map>
-    <img src="images/imgs/pr_19.png" alt="">
-    <img src="images/imgs/pr_20.png" alt="">
-    <img src="images/imgs/pr_21.png" alt="">
-    <img src="images/imgs/pr_22.jpg" alt="">
+    <table>
+      <tr>
+        <td><a href="detail1.html"><img src="images/imgs/pr_18_01.png" alt=""></a></td>
+        <td><a href="detail1.html"><img src="images/imgs/pr_18_02.png" alt=""></a></td>
+      </tr>
+      <tr>
+        <td><a href="detail1.html"><img src="images/imgs/pr_18_03.png" alt=""></a></td>
+        <td><a href="detail2.html"><img src="images/imgs/pr_18_04.png" alt=""></a></td>
+      </tr>
+    </table>
+    <a href="detail1.html"><img src="images/imgs/pr_19.png" alt="">
+      <img src="images/imgs/pr_20.png" alt="">
+      <img src="images/imgs/pr_21.png" alt="">
+      <img src="images/imgs/pr_22.jpg" alt=""></a>
   </div>
   <!-- end 切片组 -->
   <!-- start 页脚按钮 -->
