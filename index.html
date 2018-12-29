@@ -57,6 +57,42 @@
       border: 4px solid #e91a70;
     }
 
+    .footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      background-color: #c80068;
+    }
+
+    .footer>.foot-link {
+      height: 58px;
+      padding: 0 25px;
+      text-align: center;
+      color: #FFF;
+      text-decoration: none;
+      font-size: 12px;
+      padding-top: 8px;
+    }
+
+    .footer>.foot-link>img {
+      width: 24px;
+      height: 20px;
+      display: block;
+      margin: 0 auto 5px;
+    }
+
+    .footer>.link-home {
+      background-color: #FF9800;
+    }
+
+    .footer>.link-baidu {
+      background-color: #03A9F4;
+    }
+
     @media(min-width:750px) {
 
       .header,
@@ -151,6 +187,11 @@
     <img src="images/imgs/pr_22.jpg" alt="">
   </div>
   <!-- end 切片组 -->
+  <!-- start 页脚按钮 -->
+  <div class="footer">
+    <a href="index.html" class="foot-link link-home"><img src="images/ic_home@2x.png" alt="返回首页">首页</a><a href="index.html" class="foot-link link-baidu"><img src="images/ic_chat@2x.png" alt="百度商桥">在线咨询</a>
+  </div>
+  <!-- end 页脚按钮 -->
   <script src="js/zepto.min.js"></script>
   <script src="js/swiper.min.js"></script>
   <script>
