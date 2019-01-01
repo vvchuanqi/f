@@ -114,6 +114,23 @@
       flex: 1;
     }
 
+    .qrcode {
+      position: fixed;
+      bottom: 65px;
+      right: 16px;
+      z-index: 20;
+      background-color: #FFF;
+      width: 220px;
+      height: 276px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .175);
+      display: none;
+    }
+
+    .qrcode img {
+      display: block;
+      width: 100%;
+    }
+
     @media(min-width:750px) {
 
       .header,
@@ -232,6 +249,9 @@
   <div class="footer">
     <a href="index.html" class="foot-link link-home"><img src="images/ic_home@2x.png" alt="返回首页">首页</a><a href="index.html" class="foot-link link-baidu"><img src="images/ic_chat@2x.png" alt="百度商桥">在线咨询</a>
   </div>
+  <div class="qrcode">
+    <img src="images/qrcode.gif" alt="">
+  </div>
   <!-- end 页脚按钮 -->
   <script src="js/zepto.min.js"></script>
   <script src="js/swiper.min.js"></script>
@@ -262,6 +282,12 @@
         var index = $(this).index();
         mySwiper.slideTo(index, 300, false); //切换到第1个slide，速度为300毫秒
         $(this).addClass("active").siblings("li").removeClass("active");
+      });
+
+      //点击对话图标显示二维码
+      $(".link-baidu").click(function() {
+        $(".qrcode").toggle();
+        return false;
       });
     });
   </script>
