@@ -22,11 +22,14 @@
       padding-bottom: 60px;
     }
 
+    .body table {
+      width: 100%;
+    }
+
     .header img,
     .body img {
       display: block;
       width: 100%;
-      max-width: 750px;
     }
 
     .swiper-container {
@@ -37,7 +40,6 @@
     .swiper-wrapper>.swiper-slide img {
       display: block;
       width: 100%;
-      max-width: 750px;
     }
 
     .thumb-list {
@@ -143,16 +145,99 @@
       width: 100%;
     }
 
+    .show_in_pc {
+      display: none;
+    }
+
     @media(min-width:750px) {
+      .show_in_pc {
+        display: blcok;
+      }
 
       .header,
       .body,
-      .swiper-container,
       .thumb-list {
-        width: 750px;
+        width: 950px;
         margin: 0 auto;
       }
 
+      .swiper-container {
+        max-width: 1920px;
+      }
+
+      .show_in_mobile {
+        display: none !important;
+      }
+
+      .header,
+      .footer {
+        display: none;
+      }
+
+      body {
+        padding-bottom: 0;
+      }
+
+      .header.show_in_pc {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+      .header.show_in_pc img {
+        display: block;
+        width: auto;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+
+      .header.show_in_pc .nav {
+        background-color: #ff0068;
+        margin-bottom: 15px;
+      }
+
+      .header.show_in_pc .nav .nav-inner {
+        width: 950px;
+        text-align: left;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .qrcode-header {
+        display: none;
+        position: absolute;
+        z-index: 50;
+        left: 120px;
+        width: 220px;
+        top: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .175);
+        background-color: #FFF;
+      }
+
+      .qrcode-header span {
+        position: absolute;
+        left: 90px;
+        bottom: 9px;
+        color: #ff0068;
+      }
+
+      .qrcode-header img {
+        display: block;
+        width: 100%;
+      }
+
+      .header.show_in_pc .nav a {
+        display: inline-block;
+        font-size: 16px;
+        text-decoration: none;
+        color: #FFF;
+        padding: 6px 25px 6px 32px;
+        background: url(images/ic_home@2x.png) center left /24px auto no-repeat;
+      }
+
+      .header.show_in_pc .nav a.link-to-weixin {
+        background-image: url(images/weixin.png);
+      }
     }
   </style>
 </head>
@@ -161,11 +246,23 @@
   <!-- start 轮播图片部分 -->
   <div class="header">
     <img src="images/imgs/pr_01.png" alt=""></div>
+  <div class="header show_in_pc">
+    <img src="images/header.jpg" alt="">
+    <div class="nav">
+      <div class="nav-inner">
+        <a href="#">回到首页</a><a href="#" class="link-to-weixin">添加微信</a>
+        <div class="qrcode-header">
+          <img src="images/qrcode.gif" alt="">
+          <span>cocohun123</span>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><a href="detail1.html"><img src="images/3zz.jpg" alt=""></a></div>
-      <div class="swiper-slide"><a href="detail1.html"><img src="images/1zz.jpg" alt=""></a></div>
-      <div class="swiper-slide"><a href="detail2.html"><img src="images/2zz.jpg" alt=""></a></div>
+      <div class="swiper-slide"><a href="detail1.html"><img src="images/3zz.jpg" alt="" class="show_in_mobile"><img src="images/banner1.jpg" alt="" class="show_in_pc"></a></div>
+      <div class="swiper-slide"><a href="detail1.html"><img src="images/1zz.jpg" alt="" class="show_in_mobile"><img src="images/banner2.jpg" alt="" class="show_in_pc"></a></div>
+      <div class="swiper-slide"><a href="detail2.html"><img src="images/2zz.jpg" alt="" class="show_in_mobile"><img src="images/banner3.jpg" alt="" class="show_in_pc"></a></div>
     </div>
     <!-- 分页器 -->
     <div class="swiper-pagination"></div>
@@ -300,6 +397,12 @@
       //点击对话图标显示二维码
       $(".link-baidu").click(function() {
         $(".qrcode").toggle();
+        return false;
+      });
+
+
+      $(".link-to-weixin").click(function() {
+        $(".qrcode-header").toggle();
         return false;
       });
     });
